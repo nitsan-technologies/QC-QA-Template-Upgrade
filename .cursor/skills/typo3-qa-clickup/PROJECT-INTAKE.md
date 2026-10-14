@@ -27,7 +27,7 @@ Theme upgrade QA intake:
 - Evidence root: qa-evidence/
 - Forms submit: yes/no + test email (if yes)
 - Assignee: (required — who gets the ClickUp issues)
-- MCP / site name: (optional)
+- TYPO3 site MCP name: (required for BE / CE testing)
 - Known issues / skip: (optional)
 ```
 
@@ -48,7 +48,7 @@ Theme upgrade QA intake:
 | Live FE URL | |
 | FE Basic Auth user/pass | session only |
 | BE user/pass | session only |
-| Theme / site MCP name | |
+| Theme / site MCP name | required when scope includes BE or CEs |
 | ClickUp parent QC/QA | |
 | ClickUp token | session only |
 | Assignee ClickUp user id | required — ask if missing (no default) |

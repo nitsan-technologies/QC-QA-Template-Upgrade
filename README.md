@@ -53,7 +53,7 @@ Use typo3-qa-clickup. Theme upgrade QA intake:
 |-----|-----------|-------|
 | Playwright (browser) | All modes | Included in `.cursor/mcp.json`. Needs Node.js 18+. Turn it on in Cursor Settings → MCP when prompted. |
 | ClickUp | `qa` mode only | Cursor Settings → MCP → Add → URL `https://mcp.clickup.com/mcp` → sign in. Not needed for `dev-precheck`. |
-| TYPO3 site MCP | Optional | Only if the project exposes one; set its name in intake. |
+| TYPO3 site MCP | **BE / CE testing** (scope BE, CEs, full) | Cursor Settings → MCP → Add → the project’s TYPO3 MCP URL (e.g. `https://<site-host>/mcp`). Must show green before BE/CE testing. Put its name in intake. FE-only runs don’t need it. |
 
 ## Developer pre-check (before passing to QA)
 
@@ -69,6 +69,7 @@ Use typo3-qa-clickup. Theme upgrade QA intake:
 - FE Basic Auth: (optional)
 - Scope: FE | BE | CEs | full
 - CE list: discover
+- TYPO3 site MCP name: (required for BE / CEs / full)
 ```
 
 No ClickUp changes. Findings go to `reports/{slug}/precheck-*.md`; the run ends with **Ready for QA** or **Fix before passing to testing**.
@@ -77,6 +78,7 @@ No ClickUp changes. Findings go to `reports/{slug}/precheck-*.md`; the run ends 
 
 `qa` mode: project slug, staging FE, staging BE, BE login, ClickUp parent, scope, filing mode, assignee.
 `dev-precheck` mode: project slug, staging FE, staging BE, BE login, scope.
+Both modes: TYPO3 site MCP connected when scope includes BE or CEs.
 
 **To file issues:** ClickUp token (session).  
 **For staging-only decisions:** live FE URL.

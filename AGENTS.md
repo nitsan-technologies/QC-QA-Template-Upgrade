@@ -19,6 +19,8 @@ If required intake fields are missing, ask **only** for those. Do not invent URL
 
 Mode is required; ask if missing. The defaults below apply to `qa` mode.
 
+BE / CE testing (scope BE, CEs, full) requires the project’s TYPO3 site MCP to be connected. If it isn’t, ask the user to connect it and do FE only until then.
+
 ## Defaults
 
 - Loop: **find → Add ClickUp issue → resume**

@@ -24,7 +24,8 @@ Reusable FE/BE QA for **any** TYPO3 theme / template upgrade.
 2. If a filled `projects/{slug}-intake.md` (or chat paste) exists, use it.
 3. If required fields are missing → **ask only for missing fields**. Do not invent URLs, credentials, CE lists, or ClickUp IDs.
 4. Do **not** reuse another project’s theme CE matrix, staging host, or parent task.
-5. **Mode** (`qa` | `dev-precheck`) is required — ask if missing. In `dev-precheck`, follow **Developer pre-check mode** below; it overrides every ClickUp rule in this skill.
+5. **TYPO3 site MCP** must be connected when scope includes BE or CEs. Check it responds before BE/CE work; if missing or erroring, ask the user to connect it (Cursor Settings → MCP) and continue with FE only until it is.
+6. **Mode** (`qa` | `dev-precheck`) is required — ask if missing. In `dev-precheck`, follow **Developer pre-check mode** below; it overrides every ClickUp rule in this skill.
 
 ## Developer pre-check mode (`dev-precheck`)
 
