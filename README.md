@@ -47,6 +47,14 @@ Use typo3-qa-clickup. Theme upgrade QA intake:
 | [`WORKFLOW.md`](WORKFLOW.md) | Common phases for a new chat |
 | [`AGENTS.md`](AGENTS.md) | Read order for the agent |
 
+## MCP connections
+
+| MCP | Needed for | Setup |
+|-----|-----------|-------|
+| Playwright (browser) | All modes | Included in `.cursor/mcp.json`. Needs Node.js 18+. Turn it on in Cursor Settings → MCP when prompted. |
+| ClickUp | `qa` mode only | Cursor Settings → MCP → Add → URL `https://mcp.clickup.com/mcp` → sign in. Not needed for `dev-precheck`. |
+| TYPO3 site MCP | Optional | Only if the project exposes one; set its name in intake. |
+
 ## Developer pre-check (before passing to QA)
 
 ```text
