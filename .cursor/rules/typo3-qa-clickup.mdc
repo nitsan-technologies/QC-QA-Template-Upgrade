@@ -7,7 +7,7 @@ alwaysApply: true
 
 Follow skill **`typo3-qa-clickup`** and **`CE-REAL-EDITOR.md`**. Load `projects/{slug}-intake.md` or ask for intake — do not assume any prior theme.
 
-Key loop: **find → Add ClickUp issue → resume**. Filing mode from intake. Issue body = Description / Steps / Actual / Expected. Default assignee Mahesh (override when user names someone). Comment on parent QC/QA, not every subtask. ClickUp bodies are **plain text**; use real API @mentions.
+Key loop: **find → Add ClickUp issue → resume**. Filing mode from intake. Issue body = Description / Steps / Actual / Expected. Assignee from intake; no default — ask the user if not given. Comment on parent QC/QA, not every subtask. ClickUp bodies are **plain text**; use real API @mentions.
 
 **Retest:** when testing is done, also check issues **assigned to the QA owner** (`testing` / resolved). Read developer comments first. Pass / not-a-bug → Closed. Fail → in development only if still broken (confirm with user first when they ask).
 

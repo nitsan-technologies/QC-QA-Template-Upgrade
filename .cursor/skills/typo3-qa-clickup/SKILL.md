@@ -31,7 +31,7 @@ Reusable FE/BE QA for **any** TYPO3 theme / template upgrade.
 3. **`show-first-then-ADD`** — list confirmed issues first; create ClickUp only after user says ADD.
 4. **Confirmed issues only** — no speculative bugs. See **Filing hygiene** below.
 5. **Issue body:** Description / Steps / Actual / Expected (+ environment + evidence).
-6. **Assignee:** Mahesh Rathod (`95011738`) unless intake overrides. Real ClickUp @mention when tagging.
+6. **Assignee:** no default. Use the intake assignee; if missing, **ask the user** before filing the first issue. Resolve the name to a ClickUp user id. Real ClickUp @mention when tagging.
 7. **Comments:** one comment on **parent QC/QA** per batch — not on every subtask. Assignment alone is enough for new issues. Short close/reopen notes on the subtask itself are OK.
 8. **Retest:** only issues assigned to the QA owner. Always **read developer comments first**. Then: **Pass / not-a-bug → `Closed`**. **Fail → `in development`** only when still broken after that review (+ tagged comment + evidence). If the user asks to **confirm before reopen**, propose the action and wait — do not auto-reopen.
 9. **After full BE+FE / CE testing:** parent QC/QA comment — testing done; after fixes can share with client.

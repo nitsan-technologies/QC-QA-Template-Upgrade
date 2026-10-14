@@ -19,7 +19,7 @@ Follow skill **`typo3-qa-clickup`** + **`CE-REAL-EDITOR.md`**. Load `projects/{s
 - Issue body: Description / Steps / Actual / Expected / Environment / Evidence.
 - **Plain text** in ClickUp (not markdown). Real @mention via API `tag` + user id, not `@Name` in the string.
 - Evidence: screenshots **and** URLs. Forms test email when allowed: `sashaj850@gmail.com`.
-- Assignee: intake developer (e.g. Heli `106831441`); default Mahesh `95011738` if unset.
+- Assignee: intake developer (e.g. Heli `106831441`). No default — if unset, ask the user before filing.
 - One parent QC/QA comment per batch. Token = session only; 401 → ask for a new token, draft in `reports/`.
 
 ## Retest + closeout

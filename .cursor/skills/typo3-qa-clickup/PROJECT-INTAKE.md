@@ -25,7 +25,7 @@ Theme upgrade QA intake:
 - Checklist path: (optional)
 - Evidence root: qa-evidence/
 - Forms submit: yes/no + test email (if yes)
-- Assignee: Mahesh (default) | …
+- Assignee: (required — who gets the ClickUp issues)
 - MCP / site name: (optional)
 - Known issues / skip: (optional)
 ```
@@ -49,7 +49,7 @@ Theme upgrade QA intake:
 | Theme / site MCP name | |
 | ClickUp parent QC/QA | |
 | ClickUp token | session only |
-| Assignee ClickUp user id | `95011738` (Mahesh) unless overridden |
+| Assignee ClickUp user id | required — ask if missing (no default) |
 | Scope | FE / BE / CEs / full |
 | Filing mode | majors-auto / show-first-then-ADD |
 | CE / Content Block list | discover / list: |

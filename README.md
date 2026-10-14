@@ -30,7 +30,7 @@ Use typo3-qa-clickup. Theme upgrade QA intake:
 - Filing: majors-auto | show-first-then-ADD
 - CE list: discover
 - Forms submit: no
-- Assignee: Mahesh (default)
+- Assignee: (required)
 ```
 
 ## Folders
@@ -48,7 +48,7 @@ Use typo3-qa-clickup. Theme upgrade QA intake:
 
 ## Required to start testing
 
-Project slug, staging FE, staging BE, BE login, ClickUp parent, scope, filing mode.
+Project slug, staging FE, staging BE, BE login, ClickUp parent, scope, filing mode, assignee.
 
 **To file issues:** ClickUp token (session).  
 **For staging-only decisions:** live FE URL.

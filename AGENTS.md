@@ -17,7 +17,7 @@ If required intake fields are missing, ask **only** for those. Do not invent URL
 - Loop: **find → Add ClickUp issue → resume**
 - Filing mode from intake (`majors-auto` or `show-first-then-ADD`)
 - Issue body: Description / Steps / Actual / Expected / Environment / Evidence
-- Assignee: Mahesh Rathod (`95011738`) unless intake overrides
+- Assignee: no default — use the intake assignee; if missing, ask the user before filing
 - One comment on the parent QC/QA per batch
 - Retest: read developer comments first; pass / not-a-bug → `Closed`; fail → `in development` only if still broken (confirm reopen when user asks)
 - Filing hygiene: upload FAL before image bugs; FormEngine-visible fields only; live/expected parity ≠ staging bug; no page-0 Speichern false positives
