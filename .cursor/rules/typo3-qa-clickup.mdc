@@ -1,0 +1,18 @@
+---
+description: Theme-upgrade QA via typo3-qa-clickup (any theme; use project intake)
+alwaysApply: true
+---
+
+# Theme upgrade QA process
+
+Follow skill **`typo3-qa-clickup`** and **`CE-REAL-EDITOR.md`**. Load `projects/{slug}-intake.md` or ask for intake — do not assume any prior theme.
+
+Key loop: **find → Add ClickUp issue → resume**. Filing mode from intake. Issue body = Description / Steps / Actual / Expected. Default assignee Mahesh (override when user names someone). Comment on parent QC/QA, not every subtask. ClickUp bodies are **plain text**; use real API @mentions.
+
+**Retest:** when testing is done, also check issues **assigned to the QA owner** (`testing` / resolved). Read developer comments first. Pass / not-a-bug → Closed. Fail → in development only if still broken (confirm with user first when they ask).
+
+**Filing hygiene:** no image bugs without FAL upload; no fields that are not in FormEngine; live/expected parity is not a staging bug; no page-0 Speichern false positives.
+
+**Closeout:** remove QA test pages **before** the “testing and bug review is completed” parent comment. Tag **intake assignee and Mahesh** that it is ready for a client update.
+
+**Mandatory early:** do not finish FE compare on screenshots alone — **submit site search**, click main nav/footer/CTAs, and compare staging vs live for staging-only breaks. Prefer element-only CE FE evidence. Never create QA pages outside the site root.

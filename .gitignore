@@ -1,0 +1,20 @@
+# Secrets
+.env*
+*.pem
+*.key
+
+# OS
+.DS_Store
+
+# Project-specific work stays local
+projects/*-intake.md
+scripts/*
+!scripts/README.md
+qa-evidence/*
+!qa-evidence/.gitkeep
+reports/*
+!reports/.gitkeep
+
+# Tooling
+node_modules/
+__pycache__/

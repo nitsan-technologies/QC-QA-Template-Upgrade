@@ -1,0 +1,28 @@
+---
+description: Standing orders Krishna shared for TYPO3 theme upgrade QA (all projects)
+alwaysApply: true
+---
+
+# Upgrade project testing — remember these
+
+Follow skill **`typo3-qa-clickup`** + **`CE-REAL-EDITOR.md`**. Load `projects/{slug}-intake.md` — never reuse another project’s theme, host, CE list, or ClickUp parent.
+
+## CEs (real editor)
+
+- One hidden QA page under **site root → misc**. Never pid 0 / outside root.
+- One CE at a time: FormEngine fields → fill (FAL before image asserts) → save → reload → edit → FE.
+- IRRE: **Create new** (exact), not Image “Create new relation”.
+- File majors immediately (`find → Add → resume`). Prefer `fe-el-*.png` + URLs.
+
+## ClickUp
+
+- Issue body: Description / Steps / Actual / Expected / Environment / Evidence.
+- **Plain text** in ClickUp (not markdown). Real @mention via API `tag` + user id, not `@Name` in the string.
+- Evidence: screenshots **and** URLs. Forms test email when allowed: `sashaj850@gmail.com`.
+- Assignee: intake developer (e.g. Heli `106831441`); default Mahesh `95011738` if unset.
+- One parent QC/QA comment per batch. Token = session only; 401 → ask for a new token, draft in `reports/`.
+
+## Retest + closeout
+
+- When CE/FE/BE testing is done, **also retest issues assigned to Krishna** (`95011737`) in `testing` / resolved. Read developer comments first. Pass / not-a-bug → `Closed`. Fail → `in development` only if still broken.
+- **Delete QA test pages in BE first**, then parent comment tagging **intake assignee (Heli) and Mahesh**: testing and bug review completed, ready for client update. Do not post complete while QA pages still exist.
