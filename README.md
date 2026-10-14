@@ -17,6 +17,7 @@ Do **not** assume theme key, URLs, CE set, or ClickUp parent. Load intake every 
 ```text
 Use typo3-qa-clickup. Theme upgrade QA intake:
 
+- Mode: qa | dev-precheck
 - Project slug:
 - Theme key (ns_theme_…):
 - Staging FE:
@@ -46,9 +47,28 @@ Use typo3-qa-clickup. Theme upgrade QA intake:
 | [`WORKFLOW.md`](WORKFLOW.md) | Common phases for a new chat |
 | [`AGENTS.md`](AGENTS.md) | Read order for the agent |
 
+## Developer pre-check (before passing to QA)
+
+```text
+Use typo3-qa-clickup. Theme upgrade QA intake:
+- Mode: dev-precheck
+- Project slug:
+- Theme key (ns_theme_…):
+- Staging FE:
+- Staging BE:
+- BE user / pass: (session only)
+- Live FE:
+- FE Basic Auth: (optional)
+- Scope: FE | BE | CEs | full
+- CE list: discover
+```
+
+No ClickUp changes. Findings go to `reports/{slug}/precheck-*.md`; the run ends with **Ready for QA** or **Fix before passing to testing**.
+
 ## Required to start testing
 
-Project slug, staging FE, staging BE, BE login, ClickUp parent, scope, filing mode, assignee.
+`qa` mode: project slug, staging FE, staging BE, BE login, ClickUp parent, scope, filing mode, assignee.
+`dev-precheck` mode: project slug, staging FE, staging BE, BE login, scope.
 
 **To file issues:** ClickUp token (session).  
 **For staging-only decisions:** live FE URL.

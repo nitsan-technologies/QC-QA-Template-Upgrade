@@ -4,7 +4,9 @@ Use this for **every** `ns_theme_*` / Content Blocks upgrade. Details and templa
 
 ## Phases
 
-1. **Intake** — Load `projects/{slug}-intake.md` or the chat paste. Confirm a summary with **no secrets echoed**.
+`dev-precheck` mode runs phases 1–5, reports findings locally instead of ClickUp (skip 6–8), deletes QA test pages, and ends with “Ready for QA” or “Fix before passing to testing”.
+
+1. **Intake** — Load `projects/{slug}-intake.md` or the chat paste. Confirm mode and a summary with **no secrets echoed**.
 2. **Mandatory interactive FE smoke** — On staging **and** live (same steps): submit site search, click main nav + key subnav, footer legal, primary CTAs, language switch, forms only if allowed. Screenshot-only compare is not enough.
 3. **Live vs staging filter** — File **staging-only** confirmed majors. Do not file issues that also exist on live / match expected theme behavior.
 4. **Backend** — Login, check logs, FormEngine for this theme’s CEs, save from Layout on a real page → cache clear → FE. Check Layout CE preview is **once per element** (no duplicates).

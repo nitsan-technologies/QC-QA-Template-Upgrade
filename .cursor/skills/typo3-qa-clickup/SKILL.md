@@ -17,12 +17,24 @@ Reusable FE/BE QA for **any** TYPO3 theme / template upgrade.
 - Retest / close / reopen ClickUp issues
 - User shares QC/QA parent + token, or says ADD / file majors
 - Theme upgrade, template update, `ns_theme_*`, Content Blocks QA
+- Developer self-check before passing a task to QA testing (`dev-precheck`)
 
 ## First action
 1. Read [`PROJECT-INTAKE.md`](PROJECT-INTAKE.md).
 2. If a filled `projects/{slug}-intake.md` (or chat paste) exists, use it.
 3. If required fields are missing → **ask only for missing fields**. Do not invent URLs, credentials, CE lists, or ClickUp IDs.
 4. Do **not** reuse another project’s theme CE matrix, staging host, or parent task.
+5. **Mode** (`qa` | `dev-precheck`) is required — ask if missing. In `dev-precheck`, follow **Developer pre-check mode** below; it overrides every ClickUp rule in this skill.
+
+## Developer pre-check mode (`dev-precheck`)
+
+A developer runs this **before moving the task to QA testing**, to catch issues QA would find.
+
+- Run the same testing: mandatory interactive FE smoke, live vs staging filter, BE, CEs per [`CE-REAL-EDITOR.md`](CE-REAL-EDITOR.md), filing hygiene.
+- **No ClickUp writes at all** — no issues, comments, status changes, or assignments. ClickUp parent, token, assignee, and filing mode are not required.
+- Report each confirmed issue in chat and in `reports/{slug}/precheck-{YYYY-MM-DD}.md` using the issue template (Description / Steps / Actual / Expected / Environment / Evidence). Evidence under `qa-evidence/{slug}/precheck/`.
+- On rerun after fixes, re-verify the previous report’s open items first, then repeat the smoke.
+- Finish: **delete QA test pages**, then give a verdict — **Ready for QA** (no open majors) or **Fix before passing to testing** (list open items). Skip retest and closeout.
 
 ## Hard operating rules
 

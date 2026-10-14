@@ -12,6 +12,13 @@ This workspace is a reusable kit for TYPO3 theme / template upgrade QA. It is no
 
 If required intake fields are missing, ask **only** for those. Do not invent URLs, credentials, CE lists, or ClickUp IDs. Do not reuse another project’s theme, staging host, or parent task.
 
+## Modes
+
+- `qa` — QA team flow below (ClickUp filing, retest, closeout).
+- `dev-precheck` — developer self-check before passing to QA testing. Same tests, **no ClickUp writes**; findings go to `reports/{slug}/precheck-*.md`; delete QA pages; end with “Ready for QA” or “Fix before passing to testing”. See the skill section **Developer pre-check mode**.
+
+Mode is required; ask if missing. The defaults below apply to `qa` mode.
+
 ## Defaults
 
 - Loop: **find → Add ClickUp issue → resume**

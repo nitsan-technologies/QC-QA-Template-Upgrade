@@ -10,6 +10,7 @@ Do **not** put passwords or ClickUp tokens in git-tracked files if the repo is s
 
 ```text
 Theme upgrade QA intake:
+- Mode: qa | dev-precheck
 - Project slug:
 - Theme key (ns_theme_…):
 - Staging FE:
@@ -36,6 +37,7 @@ Theme upgrade QA intake:
 
 | Field | Value |
 |-------|--------|
+| Mode | `qa` / `dev-precheck` (dev-precheck: no ClickUp fields needed) |
 | Project slug | |
 | Project display name | |
 | Theme extension | |

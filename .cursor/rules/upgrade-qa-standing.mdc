@@ -7,6 +7,8 @@ alwaysApply: true
 
 Follow skill **`typo3-qa-clickup`** + **`CE-REAL-EDITOR.md`**. Load `projects/{slug}-intake.md` — never reuse another project’s theme, host, CE list, or ClickUp parent.
 
+Mode `dev-precheck` (developer before QA): same CE/FE/BE testing, **no ClickUp writes**, report in `reports/{slug}/precheck-*.md`, delete QA pages, verdict only. ClickUp / retest / closeout sections apply to `qa` mode.
+
 ## CEs (real editor)
 
 - One hidden QA page under **site root → misc**. Never pid 0 / outside root.

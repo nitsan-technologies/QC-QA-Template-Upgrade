@@ -7,6 +7,8 @@ alwaysApply: true
 
 Follow skill **`typo3-qa-clickup`** and **`CE-REAL-EDITOR.md`**. Load `projects/{slug}-intake.md` or ask for intake — do not assume any prior theme.
 
+**Mode** from intake (ask if missing): `qa` or `dev-precheck`. In `dev-precheck` (developer self-check before QA): same tests, **no ClickUp writes**, findings in `reports/{slug}/precheck-*.md`, delete QA pages, verdict “Ready for QA” / “Fix before passing to testing”. Rules below are for `qa` mode.
+
 Key loop: **find → Add ClickUp issue → resume**. Filing mode from intake. Issue body = Description / Steps / Actual / Expected. Assignee from intake; no default — ask the user if not given. Comment on parent QC/QA, not every subtask. ClickUp bodies are **plain text**; use real API @mentions.
 
 **Retest:** when testing is done, also check issues **assigned to the QA owner** (`testing` / resolved). Read developer comments first. Pass / not-a-bug → Closed. Fail → in development only if still broken (confirm with user first when they ask).
