@@ -9,6 +9,15 @@ Follow skill **`typo3-qa-clickup`** + **`CE-REAL-EDITOR.md`**. Load `projects/{s
 
 Mode `dev-precheck` (developer before QA): same CE/FE/BE testing, **no ClickUp writes**, report in `reports/{slug}/precheck-*.md`, delete QA pages, verdict only. ClickUp / retest / closeout sections apply to `qa` mode.
 
+## Template-upgrade BE/FE (every project)
+
+- **Site Set:** this theme’s set must be assigned to this site; settings that used to be TypoScript constants must apply on FE.
+- **Log:** Administration → Log, php errors from the upgrade (not inherited DDEV noise unless staging Oopses).
+- **Design:** live vs staging card/grid crop, wrap, CTA placement.
+- **Form fields:** input background/border vs live even when submit is not allowed.
+- **Upgrade wizard:** missing tables/fields first, then remaining wizards — “complete remaining process”.
+- **Test mail:** Environment → Test Mail Setup; inbox must receive it.
+
 ## CEs (real editor)
 
 - One hidden QA page under **site root → misc**. Never pid 0 / outside root.
