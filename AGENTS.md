@@ -21,6 +21,8 @@ Mode is required; ask if missing. The defaults below apply to `qa` mode.
 
 BE / CE testing (scope BE, CEs, full) requires the project’s TYPO3 site MCP to be connected. If it isn’t, ask the user to connect it and do FE only until then.
 
+Every template upgrade must also run the skill **Mandatory template-upgrade checks**: this theme’s Site Set assigned and applying on FE, Administration php error log, live vs staging design crop/wrap + form-field background, Upgrade wizard remaining process, Environment test mail actually received.
+
 ## Defaults
 
 - Loop: **find → Add ClickUp issue → resume**

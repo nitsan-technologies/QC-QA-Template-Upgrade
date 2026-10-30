@@ -131,8 +131,8 @@ Open items remaining (if any) stay in development. Ready for the client update.
 1. Prefer checklist path from intake. Default quality bar: **zero tolerance** (minors count) unless scope says otherwise.
 2. Evidence under intake evidence root; **red-highlight** the broken area. For CE FE proof prefer **element-only** shots (`fe-el-*.png`), not full-page only.
 3. Live vs staging when live URL is set; mark pre-existing live issues (exclude from filing if user said staging-only).
-4. Forms: submit only if intake/user allows; use provided test email. Target the real form (exclude indexed-search chrome).
-5. BE: login, logs/Environment as needed; FormEngine for theme CEs; save from **Layout on a real page** → cache clear → FE.
+4. Forms: submit only if intake/user allows; use provided test email. Target the real form (exclude indexed-search chrome). **Always** compare form **input background / border** vs live (see mandatory upgrade checks).
+5. BE: login, then run the **mandatory template-upgrade checks** below (Site Set for this theme, Administration log, Upgrade wizard, Test mail). FormEngine for theme CEs; save from **Layout on a real page** → cache clear → FE.
 6. BE Layout: check CE **preview once per element** (no duplicate preview blocks).
 
 ### Mandatory early interactive smoke (do NOT skip)
@@ -146,11 +146,26 @@ Static URL/screenshot compare alone is **not enough**. In the **first FE pass** 
 | **Footer legal** | Open Impressum / Datenschutz / similar | 404 or swapped content on staging only |
 | **Primary CTAs** | Spenden/Kontakt/Login/etc. if present | Staging-only break |
 | **Language switch** | If multi-lang flags/links exist | Staging-only 404/wrong lang |
-| **Forms** | Only when allowed — validation + one successful submit | Staging-only fail |
+| **Forms** | Compare field styling vs live; submit only when allowed | Staging-only fail (including input BG / border) |
 
 Capture **live vs staging** evidence with red highlight on the staging failure. File staging-only majors per filing mode (`find → Add → resume` or show-first).
 
 **Never** mark FE compare complete if search (or equivalent site-wide tool) was not submitted end-to-end.
+
+### Mandatory template-upgrade checks (do NOT skip)
+
+These are required on **every** `ns_theme_*` / template upgrade, for **this** theme and **this** site only (never copy another project’s Site Set, wizard list, or screenshots). They exist because they were missed on past upgrades. Run them in the BE pass (plus FE compare for design / form BG). Scope `FE` still does the two FE rows; scope `BE` / `CEs` / `full` must do all six.
+
+| Check | Where | Action | Fail if |
+|-------|--------|--------|---------|
+| **Site Set for this template** | Sites → this site; theme `Configuration/Sets/` | Confirm **this** theme’s Site Set is assigned to **this** site. Open site settings and check values that used to live in TypoScript constants (logo, colors, contact, plugin settings). Spot-check FE that those settings apply. | Site has no Site Set, the wrong set, or TypoScript still holds theme constants that should have been migrated. Settings exist but FE ignores them. |
+| **Administration log errors** | Administration → Log. Channel `php`, Levels include `error` | After upgrade traffic, list errors. File **new** upgrade-related exceptions (example: `DocHeaderComponent::setPageBreadcrumb()` TypeError, MFA `InvalidArgumentException`). Ignore inherited DDEV/import noise unless it also Oopses on staging. | PHP errors from the upgraded core / theme / BE modules remain uncleared. |
+| **Design / layout parity** | Same FE section on live **and** staging | Compare card/grid image crop and aspect, text wrap (below vs beside image), CTA placement (`mehr erfahren` / equivalent). | Staging-only layout, crop, or wrap regression vs live for this template. |
+| **Form field background** | Contact / any EXT:form (or theme form) on live **and** staging | Compare input/textarea **background color and border** vs live. Do this even when form submit is not allowed. | Staging fields lose the template treatment (e.g. grey fill vs white / missing border). |
+| **Upgrade wizard remaining** | Admin Tools → Upgrade → Run Upgrade Wizard | Complete remaining process: create missing tables/fields first (example: `tt_content` index `parent_uid_2`), then run pending wizards. Re-open the wizard until the missing-schema block is gone. | Missing DB tables/fields still listed, or required wizards still pending after the upgrade. |
+| **Test mail received** | Admin Tools → Environment → Test Mail Setup | Send to the intake test email. **Inbox delivery** is the pass — the green “Test mail sent” flash is not enough. | Mail not received (transport `mail`/`sendmail`/`smtp` misconfigured, spam, or no inbox). |
+
+Do **not** mark BE complete if Site Set, log, upgrade wizard, or test-mail checks were skipped. Do **not** mark FE compare complete if design crop/wrap and form-field background were not compared to live.
 
 ## Content blocks / CE flow
 
@@ -181,6 +196,8 @@ Prefer `fe-el-*.png` for CE FE failures. Scripts under `scripts/` as needed. Nev
 ## What not to do
 
 - Claim FE parity complete after screenshot-only compares (must submit search / key interactive flows)
+- Skip Site Set / TypoScript-migration, Administration log, Upgrade wizard, or Test mail on a template upgrade
+- Skip live vs staging form-field background and card/grid crop/wrap checks
 - Hardcode a prior project’s theme, URLs, CEs, or ClickUp parent
 - Wait until all CEs finish before filing majors
 - Comment “additional issue added” on every subtask

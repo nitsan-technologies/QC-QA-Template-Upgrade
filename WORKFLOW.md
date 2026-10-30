@@ -7,9 +7,9 @@ Use this for **every** `ns_theme_*` / Content Blocks upgrade. Details and templa
 `dev-precheck` mode runs phases 1–5, reports findings locally instead of ClickUp (skip 6–8), deletes QA test pages, and ends with “Ready for QA” or “Fix before passing to testing”.
 
 1. **Intake** — Load `projects/{slug}-intake.md` or the chat paste. Confirm mode and a summary with **no secrets echoed**.
-2. **Mandatory interactive FE smoke** — On staging **and** live (same steps): submit site search, click main nav + key subnav, footer legal, primary CTAs, language switch, forms only if allowed. Screenshot-only compare is not enough.
-3. **Live vs staging filter** — File **staging-only** confirmed majors. Do not file issues that also exist on live / match expected theme behavior.
-4. **Backend** — Login, check logs, FormEngine for this theme’s CEs, save from Layout on a real page → cache clear → FE. Check Layout CE preview is **once per element** (no duplicates).
+2. **Mandatory interactive FE smoke** — On staging **and** live (same steps): submit site search, click main nav + key subnav, footer legal, primary CTAs, language switch, form-field background vs live, forms submit only if allowed. Screenshot-only compare is not enough.
+3. **Live vs staging filter** — File **staging-only** confirmed majors. Do not file issues that also exist on live / match expected theme behavior. Include **design crop/wrap** and **form field background** vs live (mandatory upgrade checks).
+4. **Backend** — Login, then mandatory template-upgrade checks: **this theme’s Site Set** assigned and working, Administration **php error** log, Upgrade wizard **remaining process** (missing tables/fields + pending wizards), Environment **test mail actually received**. Then FormEngine for this theme’s CEs, save from Layout on a real page → cache clear → FE. Check Layout CE preview is **once per element** (no duplicates).
 5. **Content elements** — Discover **this** theme’s CEs (never copy another theme’s list). Follow [`CE-REAL-EDITOR.md`](.cursor/skills/typo3-qa-clickup/CE-REAL-EDITOR.md): one hidden QA page under site root, one CE at a time, FormEngine fields, FAL before image asserts, file majors immediately.
 6. **ClickUp** — Each confirmed major: Description / Steps / Actual / Expected / Environment / Evidence. Filing mode from intake. Assignee from intake; if missing, ask the user (no default). Follow skill **Filing hygiene** (no speculative / setup-error bugs).
 7. **Parent comment** — One comment on the parent QC/QA per batch (testing done / retest done). Not on every subtask.

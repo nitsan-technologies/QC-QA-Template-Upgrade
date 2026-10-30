@@ -69,3 +69,4 @@ Theme upgrade QA intake:
 1. Agent confirms intake summary (**no secrets echoed**).
 2. If CEs = `discover` → list from theme package / BE (this theme only).
 3. Estimate time + case types; then run FE/BE/CE per `typo3-qa-clickup` + `CE-REAL-EDITOR.md`.
+4. Always include the skill **Mandatory template-upgrade checks** for this theme/site: Site Set, Administration log, design crop/wrap, form-field background, Upgrade wizard, test mail received. Use the forms test email for Environment → Test Mail Setup when one is given.

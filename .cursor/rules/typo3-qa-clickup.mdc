@@ -18,3 +18,5 @@ Key loop: **find → Add ClickUp issue → resume**. Filing mode from intake. Is
 **Closeout:** remove QA test pages **before** the “testing and bug review is completed” parent comment. Tag **intake assignee and Mahesh** that it is ready for a client update.
 
 **Mandatory early:** do not finish FE compare on screenshots alone — **submit site search**, click main nav/footer/CTAs, and compare staging vs live for staging-only breaks. Prefer element-only CE FE evidence. Never create QA pages outside the site root.
+
+**Mandatory template-upgrade checks:** this theme’s Site Set assigned and working on this site; Administration log php errors; live vs staging design crop/wrap and form-field background; Upgrade wizard remaining tables/fields + pending wizards; Environment test mail received in the inbox (not only “Test mail sent”).

@@ -55,6 +55,8 @@ Use typo3-qa-clickup. Theme upgrade QA intake:
 | ClickUp | `qa` mode only | Cursor Settings → MCP → Add → URL `https://mcp.clickup.com/mcp` → sign in. Not needed for `dev-precheck`. |
 | TYPO3 site MCP | **BE / CE testing** (scope BE, CEs, full) | Cursor Settings → MCP → Add → the project’s TYPO3 MCP URL (e.g. `https://<site-host>/mcp`). Must show green before BE/CE testing. Put its name in intake. FE-only runs don’t need it. |
 
+**MCP connect notes:** `GET /mcp` returning `{"error":"Missing authentication token"}` with `WWW-Authenticate: Bearer` means the MCP endpoint is up and waiting for a token — it is not a 404. Complete Cursor OAuth, or use a personal Bearer token from AI Foundation → MCP. If staging also has **HTTP Basic Auth**, Cursor cannot send both `Authorization: Basic` and `Authorization: Bearer`. Prefer excluding `/mcp` and `/.well-known/oauth-*` from Basic, or put Basic in the URL userinfo and the MCP token in the path (`/mcp/r/{token}`) / `?token=`.
+
 ## Developer pre-check (before passing to QA)
 
 ```text
@@ -79,6 +81,8 @@ No ClickUp changes. Findings go to `reports/{slug}/precheck-*.md`; the run ends 
 `qa` mode: project slug, staging FE, staging BE, BE login, ClickUp parent, scope, filing mode, assignee.
 `dev-precheck` mode: project slug, staging FE, staging BE, BE login, scope.
 Both modes: TYPO3 site MCP connected when scope includes BE or CEs.
+
+**Mandatory on every template upgrade** (this theme / this site only — see skill): Site Set assigned and working; Administration log php errors; live vs staging design crop/wrap and form-field background; Upgrade wizard remaining tables/fields + wizards; Environment test mail **received** (not only “sent”).
 
 **To file issues:** ClickUp token (session).  
 **For staging-only decisions:** live FE URL.
